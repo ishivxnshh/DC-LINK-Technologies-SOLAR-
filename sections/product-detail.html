@@ -1,0 +1,177 @@
+<section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Breadcrumbs -->
+        <nav class="flex mb-8 text-sm text-slate-500" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="index.html" class="inline-flex items-center hover:text-emerald-700">
+                        <i class="fas fa-home mr-2"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-300 mx-2"></i>
+                        <a href="product-list.html" class="hover:text-emerald-700">Products</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-300 mx-2"></i>
+                        <a href="product-list.html?category=connectors" class="hover:text-emerald-700">Connectors</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-300 mx-2"></i>
+                        <span class="text-slate-800 font-semibold">MC4 Solar DC Connector</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Product Images -->
+            <div class="space-y-4">
+                <div
+                    class="aspect-w-4 aspect-h-3 bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 relative group">
+                    <img id="main-product-image" src="assets/images/product-3.jpeg" alt="Product Image"
+                        class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 left-4">
+                        <span
+                            class="inline-block bg-emerald-600 text-white text-xs px-2 py-1 rounded-md font-bold uppercase tracking-wider">In
+                            Stock</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <img src="assets/images/product-3.jpeg"
+                        class="thumbnail-img w-full h-24 object-cover rounded-lg cursor-pointer border-2 border-emerald-500 ring-2 ring-emerald-200 hover:opacity-100 transition-all bg-gray-50"
+                        alt="View 1">
+                    <img src="assets/images/product-1.jpeg"
+                        class="thumbnail-img w-full h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-emerald-500 hover:opacity-100 opacity-70 transition-all bg-gray-50"
+                        alt="View 2">
+                    <img src="assets/images/product-2.jpeg"
+                        class="thumbnail-img w-full h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-emerald-500 hover:opacity-100 opacity-70 transition-all bg-gray-50"
+                        alt="View 3">
+                    <!-- Placeholder for 4th image -->
+                    <div class="w-full h-24 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <div class="mb-2">
+                    <span class="text-sm font-bold text-amber-500 tracking-wider uppercase">DC-LINK Series</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">MC4 Solar DC Connector (1500V)</h1>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    Designed for heavy-duty solar applications, the DC-LINK MC4 Connector provides a reliable,
+                    waterproof connection for PV systems. Featuring high-grade materials and low contact resistance
+                    ensuring maximum efficiency and safety.
+                </p>
+
+                <!-- Key Features List -->
+                <div class="mb-8">
+                    <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-3">Key Features</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-amber-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                            <span class="text-slate-700">Rated Voltage: 1500V DC (IEC) / 1000V DC (UL)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                            <span class="text-slate-700">IP68 Waterproof Protection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                            <span class="text-slate-700">High Current Carrying Capacity (30A)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-amber-500 mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+                            <span class="text-slate-700">Snap-in Lock System</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Certifications -->
+                <div class="mb-8 p-4 bg-gray-50 rounded-xl border border-gray-100 flex flex-wrap gap-6 items-center">
+                    <span class="text-sm font-bold text-slate-500 uppercase">Certified By:</span>
+                    <div class="flex gap-4 text-slate-400 text-2xl">
+                        <i class="fas fa-certificate hover:text-emerald-700 transition-colors" title="IEC"></i>
+                        <i class="fas fa-shield-alt hover:text-emerald-700 transition-colors" title="TUV"></i>
+                        <i class="fas fa-globe hover:text-emerald-700 transition-colors" title="CE"></i>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="flex-1 bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-emerald-800 hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                        <i class="fas fa-file-pdf"></i> Download Datasheet
+                    </button>
+                    <a href="contact.html"
+                        class="flex-1 bg-white border-2 border-slate-900 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-slate-900 hover:text-white transition-all flex items-center justify-center gap-2">
+                        Request Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs Table -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 border-b border-gray-200 pb-2">Technical Specifications
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-slate-700 w-1/3">Rated Voltage</td>
+                            <td class="px-6 py-4 text-slate-600">1500V DC</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="px-6 py-4 font-semibold text-slate-700">Rated Current</td>
+                            <td class="px-6 py-4 text-slate-600">30A (4mm², 6mm²)</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-slate-700">Test Voltage</td>
+                            <td class="px-6 py-4 text-slate-600">6KV (50Hz, 1 min)</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="px-6 py-4 font-semibold text-slate-700">Contact Resistance</td>
+                            <td class="px-6 py-4 text-slate-600">
+                                < 0.5mΩ</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-slate-700">Contact Material</td>
+                            <td class="px-6 py-4 text-slate-600">Copper, Tin Plated</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="px-6 py-4 font-semibold text-slate-700">Insulation Material</td>
+                            <td class="px-6 py-4 text-slate-600">PPO</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-slate-700">Protection Degree</td>
+                            <td class="px-6 py-4 text-slate-600">IP68 (Mated)</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="px-6 py-4 font-semibold text-slate-700">Flame Class</td>
+                            <td class="px-6 py-4 text-slate-600">UL94-V0</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-slate-700">Safety Class</td>
+                            <td class="px-6 py-4 text-slate-600">II</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="px-6 py-4 font-semibold text-slate-700">Ambient Temperature Range</td>
+                            <td class="px-6 py-4 text-slate-600">-40°C ~ +85°C</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>
