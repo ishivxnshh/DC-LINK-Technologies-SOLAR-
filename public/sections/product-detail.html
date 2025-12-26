@@ -1,0 +1,326 @@
+<section class="py-12 bg-gray-50 min-h-screen">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Breadcrumbs -->
+        <nav class="flex mb-8 text-sm text-slate-500" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="index.html" class="inline-flex items-center hover:text-emerald-700 transition-colors">
+                        <i class="fas fa-home mr-2"></i> Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-300 mx-2"></i>
+                        <a href="product-list.html" class="hover:text-emerald-700 transition-colors">Products</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-300 mx-2"></i>
+                        <span class="text-slate-800 font-semibold truncate max-w-[200px] md:max-w-none">MC4 Solar DC
+                            Connector</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+            <!-- LEFT COLUMN: Images & Detailed Content -->
+            <div class="lg:col-span-7 space-y-8">
+
+                <!-- 1. Product Gallery -->
+                <!-- 1. Product Carousel -->
+                <div class="bg-white rounded-2xl p-2 border border-gray-100 shadow-sm select-none">
+
+                    <!-- 1. Horizontal Image Strip -->
+                    <div class="relative group">
+                        <!-- Scroll Container -->
+                        <div id="gallery-strip"
+                            class="flex gap-4 overflow-x-auto pb-6 pt-2 px-1 scrollbar-hide snap-x cursor-grab active:cursor-grabbing">
+                            <!-- Cards injected via JS -->
+                        </div>
+
+                        <!-- Fade Gradients -->
+                        <div
+                            class="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-white/80 to-transparent pointer-events-none z-10">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Tabbed Content Interface -->
+                <div id="product-tabs" class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <!-- Tab Navigation -->
+                    <div class="flex border-b border-gray-100 overflow-x-auto">
+                        <button
+                            class="tab-btn active px-6 py-4 text-sm font-bold text-slate-900 border-b-2 border-emerald-600 bg-emerald-50/50 whitespace-nowrap"
+                            data-tab="overview">Overview</button>
+                        <button
+                            class="tab-btn px-6 py-4 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-emerald-700 hover:bg-gray-50 whitespace-nowrap"
+                            data-tab="specs">Tech Specs</button>
+                        <button
+                            class="tab-btn px-6 py-4 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-emerald-700 hover:bg-gray-50 whitespace-nowrap"
+                            data-tab="models">Available Models</button>
+                        <button
+                            class="tab-btn px-6 py-4 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-emerald-700 hover:bg-gray-50 whitespace-nowrap"
+                            data-tab="downloads">Downloads</button>
+                    </div>
+
+                    <!-- Tab Content Panels -->
+                    <div class="p-8">
+
+                        <!-- TAB: Overview -->
+                        <div id="tab-overview" class="tab-content block animate-fade-in">
+                            <h3 class="text-xl font-bold text-slate-900 mb-4">Product Overview</h3>
+                            <p class="text-slate-600 leading-relaxed mb-8 text-base">
+                                Engineered for the most demanding solar installations, this component ensures maximum
+                                efficiency and long-term reliability. Built with high-grade materials to withstand
+                                extreme weather conditions, it is the preferred choice for utility-scale and commercial
+                                PV projects worldwide.
+                            </p>
+
+                            <!-- Application Icons -->
+                            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-4">Common
+                                Applications</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                                <div class="flex items-center p-3 rounded-lg bg-gray-50 border border-gray-100">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-amber-500 shadow-sm mr-3">
+                                        <i class="fas fa-solar-panel"></i>
+                                    </div>
+                                    <span class="text-sm font-medium text-slate-700">Utility Scale PV</span>
+                                </div>
+                                <div class="flex items-center p-3 rounded-lg bg-gray-50 border border-gray-100">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-amber-500 shadow-sm mr-3">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <span class="text-sm font-medium text-slate-700">Rooftop Solar</span>
+                                </div>
+                                <div class="flex items-center p-3 rounded-lg bg-gray-50 border border-gray-100">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-amber-500 shadow-sm mr-3">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <span class="text-sm font-medium text-slate-700">Inverter Systems</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB: Tech Specs -->
+                        <div id="tab-specs" class="tab-content hidden animate-fade-in">
+                            <h3 class="text-xl font-bold text-slate-900 mb-6">Technical Specifications</h3>
+                            <div class="overflow-hidden rounded-lg border border-gray-200">
+                                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr class="bg-gray-50">
+                                            <td class="px-6 py-4 font-semibold text-slate-700 w-1/3">Rated Voltage</td>
+                                            <td class="px-6 py-4 text-slate-600">1500V DC</td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td class="px-6 py-4 font-semibold text-slate-700">Rated Current</td>
+                                            <td class="px-6 py-4 text-slate-600">30A (4mm²) / 45A (10mm²)</td>
+                                        </tr>
+                                        <tr class="bg-gray-50">
+                                            <td class="px-6 py-4 font-semibold text-slate-700">Test Voltage</td>
+                                            <td class="px-6 py-4 text-slate-600">6KV (50Hz, 1 min)</td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td class="px-6 py-4 font-semibold text-slate-700">Contact Resistance</td>
+                                            <td class="px-6 py-4 text-slate-600">
+                                                < 0.5mΩ</td>
+                                        </tr>
+                                        <tr class="bg-gray-50">
+                                            <td class="px-6 py-4 font-semibold text-slate-700">Contact Material</td>
+                                            <td class="px-6 py-4 text-slate-600">Copper, Tin Plated</td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td class="px-6 py-4 font-semibold text-slate-700">Insulation Material</td>
+                                            <td class="px-6 py-4 text-slate-600">PPO</td>
+                                        </tr>
+                                        <tr class="bg-gray-50">
+                                            <td class="px-6 py-4 font-semibold text-slate-700">Protection Degree</td>
+                                            <td class="px-6 py-4 text-slate-600">IP68 (Mated)</td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td class="px-6 py-4 font-semibold text-slate-700">Flame Class</td>
+                                            <td class="px-6 py-4 text-slate-600">UL94-V0</td>
+                                        </tr>
+                                        <tr class="bg-gray-50">
+                                            <td class="px-6 py-4 font-semibold text-slate-700">Ambient Temp</td>
+                                            <td class="px-6 py-4 text-slate-600">-40°C ~ +85°C</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- TAB: Available Models -->
+                        <div id="tab-models" class="tab-content hidden animate-fade-in">
+                            <h3 class="text-xl font-bold text-slate-900 mb-6">Available Models</h3>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-left text-gray-500 border border-gray-200 rounded-lg">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b border-gray-200">
+                                        <tr>
+                                            <th class="px-6 py-3">Model No.</th>
+                                            <th class="px-6 py-3">Cable Size</th>
+                                            <th class="px-6 py-3">Rated Current</th>
+                                            <th class="px-6 py-3 text-right">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr class="bg-white hover:bg-gray-50">
+                                            <td class="px-6 py-4 font-medium text-slate-900">DC-MC4-40</td>
+                                            <td class="px-6 py-4">4.0 mm²</td>
+                                            <td class="px-6 py-4">30A</td>
+                                            <td class="px-6 py-4 text-right"><a href="#"
+                                                    class="text-emerald-700 hover:text-emerald-800 font-semibold">Spec
+                                                    Sheet</a></td>
+                                        </tr>
+                                        <tr class="bg-white hover:bg-gray-50">
+                                            <td class="px-6 py-4 font-medium text-slate-900">DC-MC4-60</td>
+                                            <td class="px-6 py-4">6.0 mm²</td>
+                                            <td class="px-6 py-4">45A</td>
+                                            <td class="px-6 py-4 text-right"><a href="#"
+                                                    class="text-emerald-700 hover:text-emerald-800 font-semibold">Spec
+                                                    Sheet</a></td>
+                                        </tr>
+                                        <tr class="bg-white hover:bg-gray-50">
+                                            <td class="px-6 py-4 font-medium text-slate-900">DC-MC4-100</td>
+                                            <td class="px-6 py-4">10.0 mm²</td>
+                                            <td class="px-6 py-4">50A</td>
+                                            <td class="px-6 py-4 text-right"><a href="#"
+                                                    class="text-emerald-700 hover:text-emerald-800 font-semibold">Spec
+                                                    Sheet</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- TAB: Downloads -->
+                        <div id="tab-downloads" class="tab-content hidden animate-fade-in">
+                            <h3 class="text-xl font-bold text-slate-900 mb-6">Downloads & Resources</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- File 1 -->
+                                <div
+                                    class="flex items-start p-4 border border-gray-200 rounded-xl hover:border-emerald-500 hover:shadow-md transition-all group cursor-pointer bg-white">
+                                    <div class="mr-4">
+                                        <div
+                                            class="w-12 h-16 bg-red-50 border border-red-100 rounded flex items-center justify-center text-red-500">
+                                            <i class="fas fa-file-pdf text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4
+                                            class="text-slate-900 font-bold group-hover:text-emerald-700 transition-colors">
+                                            Complete Datasheet</h4>
+                                        <p class="text-xs text-slate-500 mt-1">PDF • 2.4 MB • Updated Jan 2024</p>
+                                    </div>
+                                    <button class="text-slate-400 group-hover:text-emerald-700"><i
+                                            class="fas fa-download"></i></button>
+                                </div>
+                                <!-- File 2 -->
+                                <div
+                                    class="flex items-start p-4 border border-gray-200 rounded-xl hover:border-emerald-500 hover:shadow-md transition-all group cursor-pointer bg-white">
+                                    <div class="mr-4">
+                                        <div
+                                            class="w-12 h-16 bg-blue-50 border border-blue-100 rounded flex items-center justify-center text-blue-500">
+                                            <i class="fas fa-file-alt text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4
+                                            class="text-slate-900 font-bold group-hover:text-emerald-700 transition-colors">
+                                            Installation Manual</h4>
+                                        <p class="text-xs text-slate-500 mt-1">PDF • 1.1 MB • User Guide</p>
+                                    </div>
+                                    <button class="text-slate-400 group-hover:text-emerald-700"><i
+                                            class="fas fa-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Sticky Summary Card -->
+            <div class="lg:col-span-5 relative">
+                <div class="sticky top-24 space-y-6">
+
+                    <!-- Main Product Card -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -mr-16 -mt-16 z-0">
+                        </div>
+
+                        <div class="relative z-10">
+                            <div class="mb-4">
+                                <span
+                                    class="text-xs font-bold bg-amber-100 text-amber-700 px-3 py-1 rounded-full uppercase tracking-wide">Best
+                                    Seller</span>
+                            </div>
+
+                            <h1 class="text-3xl font-extrabold text-slate-900 leading-tight mb-4">MC4 Solar DC Connector
+                            </h1>
+                            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                                High-efficiency IP68 waterproof connector for reliable solar panel connections. TUV/UL
+                                Certified for global deployment.
+                            </p>
+
+                            <!-- Badges -->
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span
+                                    class="px-3 py-1 bg-gray-100 text-slate-600 text-xs font-bold rounded border border-gray-200">1500V
+                                    DC</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 text-slate-600 text-xs font-bold rounded border border-gray-200">IP68</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 text-slate-600 text-xs font-bold rounded border border-gray-200">IEC
+                                    62852</span>
+                            </div>
+
+                            <!-- CTAs -->
+                            <div class="space-y-3">
+                                <button
+                                    class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-emerald-700/20 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group">
+                                    <span>Download Datasheet</span>
+                                    <i
+                                        class="fas fa-arrow-down transform group-hover:translate-y-1 transition-transform"></i>
+                                </button>
+                                <a href="contact.html"
+                                    class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                                    Request a Quote
+                                </a>
+                                <div class="text-center pt-2">
+                                    <a href="contact.html"
+                                        class="text-sm font-semibold text-slate-500 hover:text-emerald-700">
+                                        Have questions? Talk to an expert
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Box -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-emerald-600">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Need Technical Support?</h4>
+                                <p class="text-xs text-slate-500">Our engineers are ready to help.</p>
+                                <p class="text-sm font-bold text-slate-800 mt-1">+91 98765 43210</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

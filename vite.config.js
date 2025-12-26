@@ -11,8 +11,12 @@ export default defineConfig({
         'admin-create': 'admin-create.html',
         'admin-edit': 'admin-edit.html'
       }
-    }
+    },
+    // Copy sections folder to dist
+    copyPublicDir: true
   },
   // Ensure assets are correctly referenced
-  base: './'
+  base: './',
+  // Include sections folder in public assets
+  publicDir: 'public'
 })
