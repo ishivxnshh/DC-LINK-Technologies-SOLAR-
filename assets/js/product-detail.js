@@ -55,11 +55,107 @@ function initializeUI() {
     const mainImage = document.getElementById('main-product-image');
     const thumbnails = document.querySelectorAll('.thumbnail-img');
 
-    thumbnails.forEach(thumb => {
-        thumb.addEventListener('click', () => {
-            thumbnails.forEach(t => t.classList.remove('border-emerald-500', 'ring-2', 'ring-emerald-200'));
-            thumb.classList.add('border-emerald-500', 'ring-2', 'ring-emerald-200');
-            mainImage.src = thumb.src;
+    if (mainImage && thumbnails.length > 0) {
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => t.classList.remove('border-emerald-500', 'ring-2', 'ring-emerald-200'));
+                thumb.classList.add('border-emerald-500', 'ring-2', 'ring-emerald-200');
+                mainImage.src = thumb.src;
+            });
         });
-    });
+    }
+
+    loadProductDetails();
+}
+
+const productDB = {
+    'mc4': {
+        title: 'MC4 Solar DC Connector (1500V)',
+        desc: 'Designed for heavy-duty solar applications, the DC-LINK MC4 Connector provides a reliable, waterproof connection for PV systems. Featuring high-grade materials and low contact resistance ensuring maximum efficiency and safety.',
+        image: 'assets/images/product-3.jpeg',
+        category: 'Connectors',
+        specs: [
+            { k: 'Rated Voltage', v: '1500V DC' },
+            { k: 'Rated Current', v: '30A' },
+            { k: 'Protection', v: 'IP68' }
+        ]
+    },
+    'harness': {
+        title: 'Solar PV String Harness',
+        desc: 'Customized branch harness solutions designed to simplify field wiring and significantly reduce installation time. Pre-assembled and tested for immediate deployment.',
+        image: 'assets/images/product-1.jpeg',
+        category: 'Harnesses',
+        specs: [
+            { k: 'Voltage', v: '1500V DC' },
+            { k: 'Cable Type', v: 'EN 50618' },
+            { k: 'Config', v: 'Customizable' }
+        ]
+    },
+    'cable': {
+        title: 'H1Z2Z2-K DC Solar Cable',
+        desc: 'Premium electron-beam cross-linked solar cables designed for UV resistance and extreme weather durability. TUV certified for 25+ years of service life.',
+        image: 'assets/images/product-2.jpeg',
+        category: 'Cables',
+        specs: [
+            { k: 'Standard', v: 'EN 50618' },
+            { k: 'Conductor', v: 'Tinned Copper' },
+            { k: 'Insulation', v: 'XLPO' }
+        ]
+    },
+    'fuse': {
+        title: 'Inline Fuse Connector',
+        desc: 'Robust overcurrent protection with replaceable fuse links, essential for protecting photovoltaic systems from surge currents.',
+        image: 'assets/images/product-4.jpeg',
+        category: 'Connectors',
+        specs: [
+            { k: 'Amperage', v: '10A - 30A' },
+            { k: 'Voltage', v: '1500V DC' },
+            { k: 'Type', v: 'Inline Replaceable' }
+        ]
+    },
+    'tools': {
+        title: 'Solar Crimping Tool Set',
+        desc: 'High-precision crimping tools designed specifically for MC4 connectors to ensure secure and standard-compliant connections in the field.',
+        image: 'assets/images/product-3.jpeg', // Fallback or use placeholder logic (handled in HTML usually, but here we set src)
+        category: 'Tools',
+        specs: [
+            { k: 'Range', v: '2.5 / 4 / 6 mm²' },
+            { k: 'Type', v: 'Ratchet' },
+            { k: 'Material', v: 'Hardened Steel' }
+        ]
+    }
+};
+
+function loadProductDetails() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const product = productDB[id];
+
+    if (product) {
+        // Update Text
+        const titleEl = document.querySelector('h1');
+        const descEl = document.querySelector('p.text-lg');
+        const catEl = document.querySelector('.text-amber-500'); // small label
+
+        if (titleEl) titleEl.textContent = product.title;
+        if (descEl) descEl.textContent = product.desc;
+        if (catEl) catEl.textContent = product.category + ' Series';
+
+        // Update Image
+        const mainImg = document.getElementById('main-product-image');
+        if (mainImg && product.image) mainImg.src = product.image;
+
+        // Update Breadcrumb (Last item)
+        const breadcrumb = document.querySelector('li[aria-current="page"] span');
+        if (breadcrumb) breadcrumb.textContent = product.title;
+
+        // Simple Spec Update (Just updating first 3 rows for demo)
+        const rows = document.querySelectorAll('tbody tr');
+        product.specs.forEach((spec, index) => {
+            if (rows[index]) {
+                rows[index].children[0].textContent = spec.k;
+                rows[index].children[1].textContent = spec.v;
+            }
+        });
+    }
 }
