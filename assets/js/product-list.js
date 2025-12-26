@@ -83,7 +83,7 @@ function initializeUI() {
     });
 
     // Search Logic
-    const searchInput = document.getElementById('product-search');
+    const searchInput = document.getElementById('search-input');
     if (searchInput) {
         searchInput.addEventListener('keyup', (e) => {
             const term = e.target.value.toLowerCase();

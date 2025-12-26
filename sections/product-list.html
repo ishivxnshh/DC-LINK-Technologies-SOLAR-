@@ -8,47 +8,50 @@
                 solar connection solutions, engineered for reliability and efficiency.</p>
         </div>
 
-        <!-- Toolbar: Search & Filter -->
-        <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
-
-            <!-- Filter Categories -->
-            <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+        <!-- Filters & Search -->
+        <div class="flex flex-col lg:flex-row flex-wrap justify-between items-center gap-6 mb-12">
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-3 justify-center md:justify-start">
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm border border-transparent bg-slate-900 text-white hover:bg-slate-800 hover:scale-105 active:scale-95"
                     data-filter="all">
                     All Products
                 </button>
                 <button
-                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm border border-gray-200 bg-white text-slate-600 hover:border-emerald-500 hover:text-emerald-700 hover:shadow-md active:scale-95"
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm border border-gray-200 bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 active:scale-95"
                     data-filter="connectors">
                     Connectors
                 </button>
                 <button
-                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm border border-gray-200 bg-white text-slate-600 hover:border-emerald-500 hover:text-emerald-700 hover:shadow-md active:scale-95"
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm border border-gray-200 bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 active:scale-95"
                     data-filter="harness">
                     Harnesses
                 </button>
                 <button
-                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm border border-gray-200 bg-white text-slate-600 hover:border-emerald-500 hover:text-emerald-700 hover:shadow-md active:scale-95"
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm border border-gray-200 bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 active:scale-95"
                     data-filter="cables">
                     Cables
                 </button>
                 <button
-                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm border border-gray-200 bg-white text-slate-600 hover:border-emerald-500 hover:text-emerald-700 hover:shadow-md active:scale-95"
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm border border-gray-200 bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 active:scale-95"
                     data-filter="tools">
                     Tools
                 </button>
             </div>
 
             <!-- Search Bar -->
-            <div class="relative w-full md:w-64">
-                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <i class="fas fa-search text-gray-400"></i>
+            <div class="relative w-full md:w-96 group">
+                <div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-slate-400 group-focus-within:text-emerald-600 transition-colors"></i>
                 </div>
-                <input type="text" id="product-search"
-                    class="block w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl leading-5 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all shadow-sm hover:shadow-md"
-                    placeholder="Search products...">
+
+                <input type="text" id="search-input" class="block w-full pl-14 pr-4 py-3 border border-gray-200 rounded-full
+               bg-white placeholder-slate-400
+               focus:outline-none focus:ring-2 focus:ring-emerald-500/20
+               focus:border-emerald-500 transition-all
+               shadow-sm hover:shadow-md group-focus-within:shadow-md" placeholder="Search products...">
             </div>
+
         </div>
 
         <!-- Products Grid -->
