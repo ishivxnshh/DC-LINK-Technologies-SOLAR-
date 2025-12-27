@@ -1,3 +1,5 @@
+import '@fortawesome/fontawesome-free/css/all.css';
+
 /**
  * Generalized section loader
  * @param {string[]} sectionsContent - Array of HTML content strings

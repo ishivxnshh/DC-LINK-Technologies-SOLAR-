@@ -1,17 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './components.css';
 
 :root {
     --brand-green: #15803d;
-    /* emerald-700 override */
     --brand-dark-green: #14532d;
-    /* emerald-900 override */
     --brand-yellow: #eab308;
-    /* yellow-500 */
     --brand-black: #0f172a;
-    /* slate-900, but used as "black" */
     --brand-white: #ffffff;
 }
 
@@ -143,12 +138,6 @@ html {
     opacity: 0.8;
 }
 
-/* 8. Footer (Green Background per request/brand) */
-/* Actually, user said "White -> all backgrounds". But dark footer is standard. 
-   If strict brochure style: maybe Green footer? 
-   Let's use the .bg-emerald-900 class in HTML for footer background.
-*/
-
 .back-to-top {
     opacity: 0;
     visibility: hidden;
@@ -221,5 +210,24 @@ html {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* From components.css */
+.btn-pulse {
+    animation: pulse-emerald 2s infinite;
+}
+
+@keyframes pulse-emerald {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
     }
 }
