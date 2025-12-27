@@ -2,9 +2,11 @@
 export default {
   content: [
     "./index.html",
-    "./public/sections/**/*.html",
-    "./public/assets/js/**/*.js",
-    "./**/*.html"
+    "./contact.html",
+    "./product-*.html",
+    "./admin/**/*.html",
+    "./src/sections/**/*.html",
+    "./src/scripts/**/*.js"
   ],
   theme: {
     extend: {

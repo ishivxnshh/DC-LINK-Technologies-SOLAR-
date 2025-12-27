@@ -1,0 +1,119 @@
+{
+    "mc4": {
+        "title": "MC4 Solar DC Connector (1500V)",
+        "desc": "Designed for heavy-duty solar applications, the DC-LINK MC4 Connector provides a reliable, waterproof connection for PV systems. Featuring high-grade materials and low contact resistance ensuring maximum efficiency and safety.",
+        "images": [
+            "images/product-3.jpeg",
+            "images/product-1.jpeg",
+            "images/product-2.jpeg",
+            "images/product-4.jpeg"
+        ],
+        "category": "Connectors",
+        "specs": [
+            {
+                "k": "Rated Voltage",
+                "v": "1500V DC"
+            },
+            {
+                "k": "Rated Current",
+                "v": "30A"
+            },
+            {
+                "k": "Protection",
+                "v": "IP68"
+            }
+        ]
+    },
+    "harness": {
+        "title": "Solar PV String Harness",
+        "desc": "Customized branch harness solutions designed to simplify field wiring and significantly reduce installation time. Pre-assembled and tested for immediate deployment.",
+        "images": [
+            "images/product-1.jpeg",
+            "images/product-3.jpeg",
+            "images/product-2.jpeg"
+        ],
+        "category": "Harnesses",
+        "specs": [
+            {
+                "k": "Voltage",
+                "v": "1500V DC"
+            },
+            {
+                "k": "Cable Type",
+                "v": "EN 50618"
+            },
+            {
+                "k": "Config",
+                "v": "Customizable"
+            }
+        ]
+    },
+    "cable": {
+        "title": "H1Z2Z2-K DC Solar Cable",
+        "desc": "Premium electron-beam cross-linked solar cables designed for UV resistance and extreme weather durability. TUV certified for 25+ years of service life.",
+        "images": [
+            "images/product-2.jpeg",
+            "images/product-1.jpeg"
+        ],
+        "category": "Cables",
+        "specs": [
+            {
+                "k": "Standard",
+                "v": "EN 50618"
+            },
+            {
+                "k": "Conductor",
+                "v": "Tinned Copper"
+            },
+            {
+                "k": "Insulation",
+                "v": "XLPO"
+            }
+        ]
+    },
+    "fuse": {
+        "title": "Inline Fuse Connector",
+        "desc": "Robust overcurrent protection with replaceable fuse links, essential for protecting photovoltaic systems from surge currents.",
+        "images": [
+            "images/product-4.jpeg",
+            "images/product-3.jpeg"
+        ],
+        "category": "Connectors",
+        "specs": [
+            {
+                "k": "Amperage",
+                "v": "10A - 30A"
+            },
+            {
+                "k": "Voltage",
+                "v": "1500V DC"
+            },
+            {
+                "k": "Type",
+                "v": "Inline Replaceable"
+            }
+        ]
+    },
+    "tools": {
+        "title": "Solar Crimping Tool Set",
+        "desc": "High-precision crimping tools designed specifically for MC4 connectors to ensure secure and standard-compliant connections in the field.",
+        "images": [
+            "images/product-3.jpeg"
+        ],
+        "category": "Tools",
+        "specs": [
+            {
+                "k": "Range",
+                "v": "2.5 / 4 / 6 mm²"
+            },
+            {
+                "k": "Type",
+                "v": "Ratchet"
+            },
+            {
+                "k": "Material",
+                "v": "Hardened Steel"
+            }
+        ]
+    }
+}

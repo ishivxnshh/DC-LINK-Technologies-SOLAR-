@@ -1,48 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    loadSections();
-});
-
-const sections = [
-    'topbar.html',
-    'navbar.html',
-    'hero.html',
-    'stats.html',
-    'services.html',
-    'products.html',
-    'factory.html',
-    'why-us.html',
-    'brand-logos.html',
-    'testimonials.html',
-    'cta.html',
-    'footer.html'
-];
-
-async function loadSections() {
-    const container = document.getElementById('app');
-
-    try {
-        // Clear container to prevent duplication if function runs multiple times
-        container.innerHTML = '';
-
-        // Fetch all sections in parallel or sequentially. Sequential is safer for order.
-        for (const section of sections) {
-            const response = await fetch(`sections/${section}`);
-            if (!response.ok) throw new Error(`Failed to load ${section}`);
-            const html = await response.text();
-            container.insertAdjacentHTML('beforeend', html);
-        }
-
-        // Initialize UI logic after DOM is populated
-        initializeUI();
-
-    } catch (error) {
-        console.error('Error loading sections:', error);
-        container.innerHTML = '<p class="text-center text-red-500 py-10">Error loading website content. Please refresh.</p>';
-    }
-}
-
-function initializeUI() {
-    console.log('UI Initialized');
+export function initializeAnimations() {
+    console.log('UI/Animations Initialized');
 
     // Mobile Menu Toggle
     const btn = document.getElementById('mobile-menu-btn');
@@ -68,21 +25,17 @@ function initializeUI() {
 
     // Counter Animation
     const counters = document.querySelectorAll('.counter');
-    const speed = 200; // The lower the slower
+    const speed = 200;
 
     const animateCounters = () => {
         counters.forEach(counter => {
             const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
                 const count = +counter.innerText;
-
-                // Lower increment to slow and higher precision
                 const inc = target / speed;
 
                 if (count < target) {
-                    // Add inc to count and output in counter
                     counter.innerText = Math.ceil(count + inc);
-                    // Call function every ms
                     setTimeout(updateCount, 20);
                 } else {
                     counter.innerText = target;
@@ -108,7 +61,6 @@ function initializeUI() {
         });
     }, options);
 
-    // Observe the stats section (use the first counter's parent or the specific section)
     const firstCounter = document.querySelector('.counter');
     if (firstCounter) {
         const statsSection = firstCounter.closest('.grid');
@@ -134,7 +86,7 @@ function initializeUI() {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // Initial scroll check in case page loads scrolled down
+    // Nav Scrolled Check
     if (window.scrollY > 50 && navbar) {
         navbar.classList.add('nav-scrolled');
     }
@@ -147,7 +99,7 @@ function initializeUI() {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+            // const sectionHeight = section.clientHeight; // unused
             if (pageYOffset >= (sectionTop - 150)) {
                 current = section.getAttribute('id');
             }
@@ -177,7 +129,7 @@ function initializeUI() {
         yearSpan.innerText = new Date().getFullYear();
     }
 
-    // Smart Home Navigation (Fix for duplication/reload issue)
+    // Smart Home Navigation
     const homeLinks = document.querySelectorAll('a[href*="#home"]');
     homeLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -186,21 +138,19 @@ function initializeUI() {
 
             if (isHomePage) {
                 e.preventDefault();
-                // Force scroll to absolute top to handle sticky nav overlap correctly
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                // Clean URL update
                 history.replaceState(null, null, 'index.html#home');
             }
         });
     });
 
-    // Check for hash on load (Cross-page navigation support)
+    // Hash Scroll Check
     if (window.location.hash) {
         const targetId = window.location.hash.substring(1);
         setTimeout(() => {
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
-                const headerOffset = 100; // Adjust for sticky header
+                const headerOffset = 100;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -209,6 +159,6 @@ function initializeUI() {
                     behavior: "smooth"
                 });
             }
-        }, 300); // Slight delay to separate from load render
+        }, 300);
     }
 }
