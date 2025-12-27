@@ -7,6 +7,7 @@ const sections = [
     'navbar.html',
     'hero.html',
     'stats.html',
+    'services.html',
     'products.html',
     'factory.html',
     'why-us.html',
