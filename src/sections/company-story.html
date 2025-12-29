@@ -1,67 +1,76 @@
-<section class="py-24 bg-white overflow-hidden">
+<section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
 
-            <!-- Image Side -->
-            <div class="w-full lg:w-1/2 relative reveal-hide reveal-left">
-                <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
-                    <img src="https://images.unsplash.com/photo-1559302504-61aa18eb4eb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                        alt="Our Headquarters"
-                        class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105">
+            <!-- Left: Narrative -->
+            <div class="reveal-hide reveal-left">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="h-px w-12 bg-emerald-600"></span>
+                    <span class="text-emerald-700 font-bold uppercase tracking-wider text-sm">Who We Are</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                    More Than Just a Manufacturer. <br> We Are <span class="text-emerald-700">Solution Providers</span>.
+                </h2>
+                <div class="prose prose-lg text-slate-600 space-y-6">
+                    <p>
+                        At DC-LINK Technologies, we understand that a solar chain is only as strong as its weakest link.
+                        That's why we don't just build connectors; we engineer reliability. Founded in 2020, we
+                        recognized a gap in the market for PV components that could truly withstand the harsh realities
+                        of 25-year outdoor lifecycles.
+                    </p>
+                    <p>
+                        From our focused beginnings, we have rapidly grown into a trusted manufacturing partner. Our
+                        products—ranging from high-voltage cables to smart junction
+                        boxes—are the result of rigorous testing and continuous innovation.
+                    </p>
+                    <p>
+                        Today, we are proud to serve major EPCs and module manufacturers across
+                        5+ countries, ensuring that clean energy flows safely and efficiently in every project we
+                        deliver.
+                    </p>
+                </div>
 
-                    <!-- Floating Badge -->
-                    <div
-                        class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/50">
-                        <div class="flex items-center gap-3">
-                            <div class="p-2 bg-emerald-100 rounded-lg text-emerald-600">
-                                <i class="fas fa-users text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Team Size</p>
-                                <p class="text-lg font-bold text-slate-900">500+ Experts</p>
-                            </div>
+                <!-- Signature / Checkmark area -->
+                <div class="mt-10 flex items-center gap-8">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-slate-900">ISO 9001</span>
+                            <span class="text-xs text-slate-500">Certified Quality</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-slate-900">Global Reach</span>
+                            <span class="text-xs text-slate-500">Exporting Worldwide</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Decorative Element -->
-                <div class="absolute -z-10 top-10 -right-10 w-40 h-40 bg-emerald-100 rounded-full blur-3xl opacity-50">
-                </div>
-                <div class="absolute -z-10 -bottom-10 -left-10 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-50">
-                </div>
             </div>
 
-            <!-- Content Side -->
-            <div class="w-full lg:w-1/2 reveal-hide reveal-right">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-                    Our Journey to <span class="text-emerald-700">Excellence</span>
-                </h2>
-                <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
-                    <p>
-                        DC-LINK Technologies began with a simple yet ambitious goal: to eliminate the inefficiencies in
-                        solar connectivity. What started as a small R&D lab has grown into a global leader in
-                        photovoltaic components.
-                    </p>
-                    <p>
-                        Over the past decade, we have consistently pushed the boundaries of material science and
-                        engineering. Our commitment to quality hasn't just earned us certifications; it has earned us
-                        the trust of partners in over 45 countries.
-                    </p>
-                    <p>
-                        Today, we are more than just a manufacturer. We are a key enabler of the global energy
-                        transition, providing the reliable links that power gigawatts of clean energy worldwide.
-                    </p>
-                </div>
+            <!-- Right: Visual Collage -->
+            <div class="relative reveal-hide reveal-right min-h-[500px] lg:min-h-auto">
+                <div class="absolute top-0 right-0 w-4/5 h-4/5 bg-slate-100 rounded-2xl transform rotate-3 z-0"></div>
+                <img src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    class="relative z-10 rounded-lg shadow-2xl w-[90%] mx-auto transform -translate-y-4 hover:-translate-y-6 transition-transform duration-500"
+                    alt="Factory Floor">
 
-                <div class="mt-10 flex gap-6">
-                    <div class="flex flex-col">
-                        <span class="text-3xl font-bold text-slate-900">15+</span>
-                        <span class="text-sm text-slate-500 font-medium">Years Experience</span>
-                    </div>
-                    <div class="w-px h-12 bg-slate-200"></div>
-                    <div class="flex flex-col">
-                        <span class="text-3xl font-bold text-slate-900">50M+</span>
-                        <span class="text-sm text-slate-500 font-medium">Connectors Sold</span>
+                <!-- Stats Overlay -->
+                <div
+                    class="absolute bottom-10 -left-4 z-20 bg-emerald-700 text-white p-8 rounded-lg shadow-xl max-w-xs">
+                    <div class="text-4xl font-bold mb-1">5+</div>
+                    <div class="text-emerald-100 font-medium mb-4">Years of Excellence</div>
+                    <div class="w-full h-px bg-emerald-500/50 mb-4"></div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span>Projects Supplied</span>
+                        <span class="font-bold">1,000+</span>
                     </div>
                 </div>
             </div>

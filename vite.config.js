@@ -9,6 +9,7 @@ export default defineConfig({
         'product-detail': 'product-detail.html',
         'contact': 'contact.html',
         'about': 'about.html',
+        'services': 'services.html',
         'admin-create': 'admin/create.html',
         'admin-edit': 'admin/edit.html'
       }
