@@ -102,6 +102,7 @@ export function initializeAnimations() {
             // const sectionHeight = section.clientHeight; // unused
             if (pageYOffset >= (sectionTop - 150)) {
                 current = section.getAttribute('id');
+                if (current === 'hero') current = 'home';
             }
         });
 
@@ -148,8 +149,12 @@ export function initializeAnimations() {
     if (window.location.hash) {
         const targetId = window.location.hash.substring(1);
         setTimeout(() => {
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
+            if (targetId === 'home') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            } else if (targetElement) {
                 const headerOffset = 100;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.scrollY - headerOffset;
