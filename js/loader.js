@@ -19,7 +19,7 @@ export async function loadSections(components, targetId, callback) {
 
     const promises = components.map(async (name) => {
         try {
-            const response = await fetch(`../components/${name}.html`);
+            const response = await fetch(`./components/${name}.html`);
             if (!response.ok) throw new Error(`Failed into load ${name}`);
             return await response.text();
         } catch (error) {

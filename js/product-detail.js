@@ -2,7 +2,7 @@ export async function initializeProductDetail() {
     // 1. Fetch Data
     let productDB = {};
     try {
-        const response = await fetch('../js/products.json');
+        const response = await fetch('./js/products.json');
         productDB = await response.json();
     } catch (e) {
         console.error("Failed to load product data", e);
@@ -39,10 +39,10 @@ export async function initializeProductDetail() {
                 card.className = 'min-w-[280px] h-[340px] bg-white border border-gray-100 rounded-2xl p-6 flex items-center justify-center snap-center shadow-sm hover:shadow-md transition-shadow relative select-none cursor-pointer';
 
                 // Adjust image path if needed. Assuming images in JSON are like "images/prod.jpg"
-                // But in pages/product-detail.html, they need to be "../images/prod.jpg" IF they are relative.
+                // But in pages/product-detail.html, they need to be "images/prod.jpg" IF they are relative.
                 // If the JSON paths are "images/...", we should prefix "../".
                 // But let's check what the JSON has. Usually it's "images/...".
-                const adjustedSrc = imgSrc.startsWith('images/') ? '../' + imgSrc : imgSrc;
+                const adjustedSrc = imgSrc;
 
                 card.innerHTML = `
                     <img src="${adjustedSrc}" class="max-w-full max-h-full object-contain mix-blend-multiply hover:scale-110 transition-transform duration-500">
@@ -59,7 +59,7 @@ export async function initializeProductDetail() {
 
             // Set initial main image
             if (mainImage && product.images.length > 0) {
-                const initialSrc = product.images[0].startsWith('images/') ? '../' + product.images[0] : product.images[0];
+                const initialSrc = product.images[0];
                 mainImage.src = initialSrc;
             }
         }

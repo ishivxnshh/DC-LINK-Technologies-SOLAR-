@@ -4,55 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DC-LINK Technologies - Professional Solar Connection Solutions</title>
-
-    <!-- Fonts -->
+    <title>About Us - DC-LINK Technologies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Essential base styles for loader if CSS fails or loads late */
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
+        .reveal-hide {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
 <body class="bg-gray-50 text-slate-800 antialiased">
+    <div id="app"></div>
 
-    <div id="app">
-        <!-- Components will be loaded here -->
-        <div style="height: 100vh; display: flex; align-items: center; justify-content: center;">
-            <p>Loading content...</p>
-        </div>
-    </div>
-
-    <!-- Main Script -->
     <script type="module">
-        import { loadSections } from '../js/loader.js';
-        import { initializeAnimations } from '../js/animations.js';
+        import { loadSections } from './js/loader.js';
+        import { initializeAnimations } from './js/animations.js';
 
-        // Order of components for Home Page
         const components = [
             'topbar',
             'navbar',
-            'hero',
-            'stats',
-            'services',
-            'products',
-            'factory',
-            'why-us',
-            'brand-logos',
-            'testimonials',
+            'about-header',
+            'company-story',
+            'mission',
+            'team',
             'cta',
             'footer'
         ];
@@ -60,6 +46,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadSections(components, 'app', () => {
                 initializeAnimations();
+                // Highlight About link
+                const links = document.querySelectorAll('a[href*="about"]');
+                links.forEach(l => l.classList.add('text-emerald-700'));
             });
         });
     </script>
