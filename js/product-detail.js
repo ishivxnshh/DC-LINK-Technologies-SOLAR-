@@ -1,38 +1,16 @@
-import { loadSections } from '../loader.js';
-import { initializeAnimations } from '../animations.js';
-import productDB from '../../data/products.json';
+export async function initializeProductDetail() {
+    // 1. Fetch Data
+    let productDB = {};
+    try {
+        const response = await fetch('../js/products.json');
+        productDB = await response.json();
+    } catch (e) {
+        console.error("Failed to load product data", e);
+        return;
+    }
 
-import topbar from '../../sections/topbar.html?raw';
-import navbar from '../../sections/navbar.html?raw';
-import productDetail from '../../sections/product-detail.html?raw';
-import footer from '../../sections/footer.html?raw';
-
-const sections = [
-    topbar,
-    navbar,
-    productDetail,
-    footer
-];
-
-document.addEventListener('DOMContentLoaded', () => {
-    loadSections(sections, 'app', () => {
-        initializeAnimations();
-        initializeProductDetail();
-    });
-});
-
-function initializeProductDetail() {
-    // Gallery & Tab Logic from Original
+    // 2. Logic
     const mainImage = document.getElementById('main-product-image');
-    const thumbnails = document.querySelectorAll('.thumbnail-img'); // These might not exist yet if dynamically generated? 
-    // Actually the original logic generated the gallery strip dynamically. 
-    // BUT the thumbnails selectors were grabbed immediately. Wait.
-    // In Original code: 
-    // loadProductDetails() was called at end of initializeUI.
-    // loadProductDetails generated the gallery strip.
-    // AND mainImage logic was separate.
-
-    // Let's implement loadProductDetails logic first which populates the DOM.
 
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -59,16 +37,21 @@ function initializeProductDetail() {
             product.images.forEach((imgSrc, index) => {
                 const card = document.createElement('div');
                 card.className = 'min-w-[280px] h-[340px] bg-white border border-gray-100 rounded-2xl p-6 flex items-center justify-center snap-center shadow-sm hover:shadow-md transition-shadow relative select-none cursor-pointer';
-                // Added cursor-pointer for clarity
+
+                // Adjust image path if needed. Assuming images in JSON are like "images/prod.jpg"
+                // But in pages/product-detail.html, they need to be "../images/prod.jpg" IF they are relative.
+                // If the JSON paths are "images/...", we should prefix "../".
+                // But let's check what the JSON has. Usually it's "images/...".
+                const adjustedSrc = imgSrc.startsWith('images/') ? '../' + imgSrc : imgSrc;
 
                 card.innerHTML = `
-                    <img src="${imgSrc}" class="max-w-full max-h-full object-contain mix-blend-multiply hover:scale-110 transition-transform duration-500">
+                    <img src="${adjustedSrc}" class="max-w-full max-h-full object-contain mix-blend-multiply hover:scale-110 transition-transform duration-500">
                     <div class="absolute top-4 right-4 text-xs font-bold text-gray-300">0${index + 1}</div>
                 `;
 
                 // Click to set main image
                 card.addEventListener('click', () => {
-                    if (mainImage) mainImage.src = imgSrc;
+                    if (mainImage) mainImage.src = adjustedSrc;
                 });
 
                 galleryStrip.appendChild(card);
@@ -76,18 +59,21 @@ function initializeProductDetail() {
 
             // Set initial main image
             if (mainImage && product.images.length > 0) {
-                mainImage.src = product.images[0];
+                const initialSrc = product.images[0].startsWith('images/') ? '../' + product.images[0] : product.images[0];
+                mainImage.src = initialSrc;
             }
         }
 
         // Specs
         const rows = document.querySelectorAll('tbody tr');
-        product.specs.forEach((spec, index) => {
-            if (rows[index]) {
-                rows[index].children[0].textContent = spec.k;
-                rows[index].children[1].textContent = spec.v;
-            }
-        });
+        if (product.specs) {
+            product.specs.forEach((spec, index) => {
+                if (rows[index]) {
+                    rows[index].children[0].textContent = spec.k;
+                    rows[index].children[1].textContent = spec.v;
+                }
+            });
+        }
     }
 
     // Tabs

@@ -1,26 +1,11 @@
-import { loadSections } from '../loader.js';
-import { initializeAnimations } from '../animations.js';
+export let products = [];
 
-import topbar from '../../sections/topbar.html?raw';
-import navbar from '../../sections/navbar.html?raw';
-import productList from '../../sections/product-list.html?raw';
-import footer from '../../sections/footer.html?raw';
+export function initializeProductList() {
+    // We need to fetch product data or parse it from the DOM if it was static.
+    // However, since we are moving from a system where data might have been in valid JSON files or just HTML.
+    // Let's assume the HTML loaded by loader.js contains the product items.
+    // If dynamic data is needed, we would fetch it here.
 
-const sections = [
-    topbar,
-    navbar,
-    productList,
-    footer
-];
-
-document.addEventListener('DOMContentLoaded', () => {
-    loadSections(sections, 'app', () => {
-        initializeAnimations();
-        initializeProductList();
-    });
-});
-
-function initializeProductList() {
     // Filter Logic
     const filterButtons = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-item');
@@ -55,6 +40,7 @@ function initializeProductList() {
             const term = e.target.value.toLowerCase();
             productCards.forEach(card => {
                 const title = card.querySelector('h3').textContent.toLowerCase();
+                // Assume description is also searchable if present
                 if (title.includes(term)) {
                     card.style.display = 'block';
                 } else {

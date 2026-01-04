@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - DC-LINK Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-gray-50 text-slate-800 antialiased">
+    <div id="app"></div>
+
+    <script type="module">
+        import { loadSections } from '../js/loader.js';
+        import { initializeAnimations } from '../js/animations.js';
+        import { initializeProductDetail } from '../js/product-detail.js';
+
+        const components = [
+            'topbar',
+            'navbar',
+            'product-detail',
+            'footer'
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSections(components, 'app', () => {
+                initializeAnimations();
+                initializeProductDetail();
+                // Highlight Products link
+                const links = document.querySelectorAll('a[href*="products"]');
+                links.forEach(l => l.classList.add('text-emerald-700'));
+            });
+        });
+    </script>
+</body>
+
+</html>
